@@ -85,19 +85,20 @@ public class COMP2112Project2 {
         tree3.root = tree3.insert(tree3.root, artist5);
             
         
-            int index = tree3.search(tree3.root, "k").indexOfArray;
-            System.out.println(songArray[index]);
+            
             
              
              
              
              
              
-             
-        /*
+            
         System.out.println("Welcome");
-        int operation = scanner.nextInt();
-        while(true) {
+        
+        boolean condition = true;
+        while(condition) {
+            System.out.println("1- Search with Id \n2- Search with song name \n3- Search with artist name \n4- Delete with id \n5- Search within the range \n6- Exit");
+            int operation = scanner.nextInt();
         switch (operation) {
             case 1:
                 System.out.println("Enter the id you want to search : ");
@@ -106,16 +107,56 @@ public class COMP2112Project2 {
                 System.out.println(songArray[indexArray].toString());
                 break;
             case 2:
-                
+                System.out.println("Enter the song name you want to search : ");
+                String songName = scanner.next();
+                int indexArray2 = tree2.search(tree2.root, songName).indexOfArray;
+                System.out.println(songArray[indexArray2]);
+                break;
+            case 3:
+                System.out.println("Enter the artist name you want to search : ");
+                String artistName = scanner.next();
+                int indexArray3 = tree3.search(tree3.root, artistName).indexOfArray;
+                System.out.println(songArray[indexArray3]);
+                break;
+            case 4:
+                System.out.println("Enter the id you want to delete : ");
+                int deleteId = scanner.nextInt();
+                tree1.root = tree1.deleteNode(tree1.root, deleteId);
+                tree2.root = tree2.deleteNode(tree2.root, deleteId);
+                tree3.root = tree3.deleteNode(tree3.root, deleteId);
+                System.out.println("---");
+                tree1.preOrder(tree1.root);
+                tree2.preOrder(tree2.root);
+                tree3.preOrder(tree3.root);
+                break;
+            case 5:
+                System.out.println("Enter the ranges you want to traverse : ");
+                System.out.println("Enter the min value :");
+                int min = scanner.nextInt();
+                System.out.println("Enter the max value : ");
+                int max = scanner.nextInt();
+                tree1.preOrderWithinTheRange(tree1.root, min, max, songArray);
+                break;
+            case 6:
+                condition = false;
+                System.out.println("Exit");
+                break;
+                default:
+                    System.out.println("Unvalid operation");
+                    break;
+                /*
+            case 2:
+     
                 System.out.println("Enter the id you want to delete : ");
                 int id2 = scanner.nextInt();
                 int indexArray2 = tree1.search(tree1.root, id2).indexOfArray;
                 tree1.deleteNode(tree1.root, id2);
                 tree1.preOrder(tree1.root);
                 break;
+                */
         }
         }
-        */
+       
        
         
         

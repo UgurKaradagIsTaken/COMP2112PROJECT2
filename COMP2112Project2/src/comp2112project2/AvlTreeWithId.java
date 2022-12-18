@@ -173,13 +173,13 @@ public class AvlTreeWithId {
 			preOrder(node.right);
 		}
 	}
-        void preOrderWithinTheRange(SongNodeWithId node, int min, int max) {
+        void preOrderWithinTheRange(SongNodeWithId node, int min, int max, Song[] s) {
 		if (node != null) {
                     if( min <= node.id && node.id <= max) {
-                        System.out.println(node.id + " ");
+                        System.out.println(s[node.id]);
                     }
-			preOrderWithinTheRange(node.left,  min,  max);
-			preOrderWithinTheRange(node.right,min, max);
+			preOrderWithinTheRange(node.left,  min,  max, s);
+			preOrderWithinTheRange(node.right,min, max, s);
 		}
 	}
         //DELETE VE MINVALUE FONKSİYONLARINA CALIS ACIL
